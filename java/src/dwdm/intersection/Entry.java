@@ -4,6 +4,7 @@ import static java.lang.Long.parseLong;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Arrays;
 
 /**
  * "Compressed" representation of line in a file for join.
@@ -57,5 +58,35 @@ public class Entry {
 	public String toString(){
 		return ((char) data[0]) + format.format(getNumber());
 	}
+
+	/**
+	 * <b>Do not use</b> this method to split entries over chunks
+	 * because it computes the hash code with respect to the first letter.
+	 * If you want to know, which chunk should be used, invoke first
+	 * {@link #getNumber()} and pass it to {@link Utils#hashLong(long)}.
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(data);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Entry other = (Entry) obj;
+		if (!Arrays.equals(data, other.data))
+			return false;
+		return true;
+	}
+	
+	
 
 }
