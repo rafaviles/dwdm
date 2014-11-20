@@ -1,0 +1,5 @@
+#!/bin/bash
+
+javac src/intersection/HashFunction.java -d bin
+
+java -cp bin/ intersection.HashFunction src/intersection/test1.txt src/intersection/test2.txt
