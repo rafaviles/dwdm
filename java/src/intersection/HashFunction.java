@@ -21,9 +21,9 @@ import java.util.Scanner;
 public class HashFunction {
 	
 	private static final String DEFAULT_FILE1 = 
-			"/Users/rafael/Documents/intersection/intersection/src/intersection/test.txt";
+			"/Users/rafael/Documents/intersection/intersection/src/intersection/test1.txt";
 	private static final String DEFAULT_FILE2 =
-			"/Users/rafael/Documents/intersection/intersection/src/intersection/text2.txt";
+			"/Users/rafael/Documents/intersection/intersection/src/intersection/test2.txt";
 			
 
 	static String[] theArray;
