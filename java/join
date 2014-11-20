@@ -1,5 +1,11 @@
 #!/bin/bash
 
+mkdir bin 2> /dev/null #if folder already exists, send error message
+                       #ignore the error message
+# WARNING: If you don't have permission to create this folder,
+# there won't be any message about this.
+
+
 javac src/intersection/HashFunction.java -d bin
 
 java -cp bin/ intersection.HashFunction src/intersection/test1.txt src/intersection/test2.txt
