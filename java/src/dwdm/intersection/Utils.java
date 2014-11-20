@@ -1,5 +1,10 @@
 package dwdm.intersection;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Utils {
 	
 	private static final long prime = 47_055_833_459L;
@@ -11,6 +16,21 @@ public class Utils {
 	
 	public int hashLong(long x){
 		return (int) ((((a*x) + b) % prime) % chunks);
+	}
+	
+	public static List<Entry> read(InputStream input) throws IOException{
+		List<Entry> list = new ArrayList<>(32_000);
+		byte[] buffer = new byte[6144];
+		int len = input.read(buffer);
+		while(len != -1){
+			for(int i = 0; i < len / 6; i++){
+				list.add(new Entry(buffer, i * 6));
+			}
+			len = input.read(buffer);
+		}
+		input.close();
+		return list;
+		
 	}
 
 }

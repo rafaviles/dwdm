@@ -14,12 +14,19 @@ import java.util.Arrays;
  *
  */
 public class Entry {
-	private static final NumberFormat format = new DecimalFormat("00000000000");
+	private static final NumberFormat format = new DecimalFormat("0000000000");
 	
 	private final byte[] data = new byte[6];
 	
 	public Entry(String entry){
 		toByte(data, entry);
+	}
+	
+	public Entry(byte[] bytes, int offset){
+		for(int i = 0; i < 6; i++){
+			data[i] = bytes[offset + i];
+		}
+		
 	}
 	
 	public static void toByte(byte[] array, String entry){
@@ -50,6 +57,10 @@ public class Entry {
 		number += (( (long) data[4] & 0xFFL) << 8);
 		number += ((long) data[5] & 0xFFL);
 		return number;
+	}
+	
+	public byte[] getData(){
+		return data;
 	}
 	
 	
