@@ -1,4 +1,4 @@
-package intersection;
+package dwdm.intersection;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,12 +18,12 @@ import java.util.Scanner;
  * @author Rafael Aviles
  * 
  */
-public class HashFunction {
+public class BasicJoin {
 	
 	private static final String DEFAULT_FILE1 = 
-			"/Users/rafael/Documents/intersection/intersection/src/intersection/test1.txt";
+			"/Users/rafael/Documents/intersection/intersection/resources/test1.txt";
 	private static final String DEFAULT_FILE2 =
-			"/Users/rafael/Documents/intersection/intersection/src/intersection/test2.txt";
+			"/Users/rafael/Documents/intersection/intersection/resources/test2.txt";
 			
 
 	static String[] theArray;

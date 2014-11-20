@@ -6,6 +6,6 @@ mkdir bin 2> /dev/null #if folder already exists, send error message
 # there won't be any message about this.
 
 
-javac src/intersection/HashFunction.java -d bin
+javac src/dwdm/intersection/BasicJoin.java -d bin
 
-java -cp bin/ intersection.HashFunction src/intersection/test1.txt src/intersection/test2.txt
+java -cp bin/ dwdm.intersection.BasicJoin resources/test1.txt resources/test2.txt
