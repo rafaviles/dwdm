@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<project name="MRC" basedir="." default="jar">
+  <property name="build.classes" value="bin" />
+  <property name="java.dir" value="src" />
+  <property name="resources.dir" value="resources" />
+  <property name="name" value="MRC" />
+  <property name="manifest" value="manifest" />
+
+  <path id="classpath">
+    <pathelement location="." />
+  </path>
+
+
+  <target name="compile" depends="clean" description="Compile the all homeworks">
+    <mkdir dir="${build.classes}" />
+
+    <!-- copy resource files -->
+    <copy todir="${build.classes}">
+      <fileset dir="${resources.dir}">
+        <include name="**/*.txt" />
+      </fileset>
+    </copy>
+
+    <!-- compile the classes themselves -->
+    <javac srcdir="${java.dir}"
+      destdir="${build.classes}"
+      debug="false"
+      deprecation="true"
+      optimize="true" >
+      <classpath refid="classpath" />
+    </javac>
+
+
+  </target>
+
+  <!-- build application  -->
+  <target name="jar" depends="compile" description="Build the complete application">
+
+    <!-- Baut die JAR-Datei -->
+    <jar jarfile="${build.lib}/${name}.jar" manifest="${manifest}">
+      <fileset dir="${build.classes}"/>
+    </jar>
+  </target>
+
+  <!-- clean up  -->
+  <target name="clean" description="Räumt die temporär angelegten Dateien weg">
+    <!-- delete folders -->
+    <delete dir="${build.dir}" />
+    <!--
+    <delete> 
+      <fileset dir="." includes="**/*~" defaultexcludes="no"/>
+    </delete>
+
+    -->
+  </target>
+</project>
+
