@@ -17,6 +17,13 @@ public class Main {
 
 	public static File outputFile;
 
+	/**
+	 * Does only the argument processing, the actual programm
+	 * will be executed in {@link #main()}
+	 * @param args
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public static void main(String[] args) throws IOException, InterruptedException {
 		for (int i = 0; i < args.length; i++) {
 			if ("-i".equals(args[i])) {
@@ -77,6 +84,11 @@ public class Main {
 	}
 	
 	
+	/**
+	 * execute the actual program
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public static void main() throws IOException, InterruptedException{
 		long start = System.currentTimeMillis();
 		File tmp1 = new File(tmpFolder, "file1");
