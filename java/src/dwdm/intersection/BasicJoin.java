@@ -1,4 +1,4 @@
-//package dwdm.intersection
+package dwdm.intersection
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -37,21 +37,16 @@ public class BasicJoin {
 	static String[] theArray;
 	int a;
 
-	//static HashSet<String> ar1 = new HashSet<String>();
-	//static HashSet<String> ar2 = new HashSet<String>();
+	
 	
 	private final static File folder1 = new File("/Users/rafael/Downloads/f1/file4.txt");
 	private final static File folder2 = new File("/Users/rafael/Downloads/f2/fila4.txt");
-	  //File[] directoryListing = folder1.listFiles();
-	//public void listFilesForFolder(final File folder) {
-	//listFilesForFolder(folder);
+	 
 
 	public static void main(String[] args) throws IOException {
 
 		//Set<Long> list = new HashSet<Long>();
 		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("/Users/rafael/Downloads/outal.txt")));
-		//HashSet<String> ar1 = new HashSet<String>();
-		//HashSet<String> ar2 = new HashSet<String>();
 		
 		//for (File fileEntry : folder1.listFiles()) {
 			//HashSet<String> ar1 = new HashSet<String>();
@@ -76,7 +71,7 @@ public class BasicJoin {
 				//Collections.sort(arr1);
 				System.out.print(arr1.size());
 				
-			    //int[] input = new int[]{1, 1, 3, 7, 7, 8, 9, 9, 9, 10};
+			    
 			    Long current = arr1.get(0);
 			    boolean found = false;
 
